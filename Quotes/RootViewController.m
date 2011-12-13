@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "RootViiewController.h"
+#import "RootViewController.h"
 
-@implementation RootViiewController
+@implementation RootViewController
 
 - (void)loadView
 {
@@ -16,8 +16,14 @@
     
     self.view.backgroundColor = [UIColor blackColor];
     
-    TabBarController *tabCntrl = [[[TabBarController alloc]init]autorelease];
+    tabCntrl = [[TabBarController alloc]init];
     [self.view addSubview:tabCntrl.view];
+}
+
+- (void) dealloc
+{
+    [tabCntrl release];
+    [super dealloc];
 }
 
 @end

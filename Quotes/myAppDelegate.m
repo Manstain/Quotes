@@ -18,6 +18,7 @@
 - (void)dealloc
 {
     [_window release];
+    [rootCtrl release];
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
@@ -29,8 +30,8 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    RootViiewController *rootContrl = [[[RootViiewController alloc]init]autorelease];
-    [self.window addSubview:rootContrl.view];
+    rootCtrl = [[RootViewController alloc]init];
+    [self.window addSubview:rootCtrl.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

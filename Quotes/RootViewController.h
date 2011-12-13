@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "TabBarController.h"
 
-@interface RootViiewController : UIViewController
+@interface RootViewController : UIViewController
+{
+    TabBarController *tabCntrl;
+}
 
 @end
