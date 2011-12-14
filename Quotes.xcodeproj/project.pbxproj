@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E93549291497B7EC002465FC /* QuotesController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93549281497B7EC002465FC /* QuotesController.m */; };
 		E935492D1497B8E8002465FC /* FavoritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935492C1497B8E8002465FC /* FavoritesController.m */; };
+		E96AFCE91499042D00AC06D3 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96AFCE81499042D00AC06D3 /* MyCell.m */; };
+		E96AFCF01499119800AC06D3 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96AFCEF1499119800AC06D3 /* MyCell.xib */; };
 		E9D685EE1496593B0016A4B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D685ED1496593B0016A4B7 /* UIKit.framework */; };
 		E9D685F01496593B0016A4B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D685EF1496593B0016A4B7 /* Foundation.framework */; };
 		E9D685F21496593B0016A4B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D685F11496593B0016A4B7 /* CoreGraphics.framework */; };
@@ -27,6 +29,9 @@
 		E93549281497B7EC002465FC /* QuotesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuotesController.m; sourceTree = "<group>"; };
 		E935492B1497B8E8002465FC /* FavoritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesController.h; sourceTree = "<group>"; };
 		E935492C1497B8E8002465FC /* FavoritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesController.m; sourceTree = "<group>"; };
+		E96AFCE71499042D00AC06D3 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		E96AFCE81499042D00AC06D3 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		E96AFCEF1499119800AC06D3 /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		E9D685E91496593B0016A4B7 /* Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D685ED1496593B0016A4B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E9D685EF1496593B0016A4B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +103,7 @@
 				E9D685FF1496593B0016A4B7 /* myAppDelegate.m */,
 				E9D686011496593B0016A4B7 /* Quotes.xcdatamodeld */,
 				E9D685F61496593B0016A4B7 /* Supporting Files */,
+				E96AFCEF1499119800AC06D3 /* MyCell.xib */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -124,6 +130,8 @@
 				E93549281497B7EC002465FC /* QuotesController.m */,
 				E935492B1497B8E8002465FC /* FavoritesController.h */,
 				E935492C1497B8E8002465FC /* FavoritesController.m */,
+				E96AFCE71499042D00AC06D3 /* MyCell.h */,
+				E96AFCE81499042D00AC06D3 /* MyCell.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -180,6 +188,7 @@
 			files = (
 				E9D685FA1496593B0016A4B7 /* InfoPlist.strings in Resources */,
 				E9D6861114966F800016A4B7 /* quotes.jpeg in Resources */,
+				E96AFCF01499119800AC06D3 /* MyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +206,7 @@
 				E9D6860F14965E360016A4B7 /* TabBarController.m in Sources */,
 				E93549291497B7EC002465FC /* QuotesController.m in Sources */,
 				E935492D1497B8E8002465FC /* FavoritesController.m in Sources */,
+				E96AFCE91499042D00AC06D3 /* MyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

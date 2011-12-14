@@ -13,11 +13,17 @@
 - (void)loadView
 {
     [super loadView];
+    [self.tableView setG];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 10;
+    return 5;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 20;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -28,17 +34,30 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellId = @"QuoteCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     
-    if(cell == nil )
+    MyCell *cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
+    
+    if (cell == nil)
     {
+        NSArray *topLevelObjects = [[NSBundle mainBundle]loadNibNamed:@"MyCell" owner:nil options:nil];
         
+        for (id curObject in topLevelObjects)
+        {
+            if ([curObject isKindOfClass:[UITableViewCell class]])
+            {
+                cell = (MyCell*)curObject;
+                break;
+            }
+        }
     }
+
+    cell.title.text = cellId;
     
-    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     return cell;
     
 }
+
+
 
 
 
