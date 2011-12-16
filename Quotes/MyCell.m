@@ -12,11 +12,25 @@
 
 @synthesize title;
 
-//-(void)setTitle:(NSString *) text
-//{
-//    //title = [[UILabel alloc]init];
-//    title.text = text;
-//}
+- (id)init 
+{
+    self = [super init];
+    if (self) 
+    {
+        CGRect frame = CGRectMake(20, 5, 280, 15);
+        title = [[UILabel alloc]initWithFrame:frame];
+        title.textAlignment = UITextAlignmentCenter;
+        [self addSubview:title];
+        //self.backgroundColor = [UIColor blackColor];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [title release];
+    [super dealloc];
+}
 
 
 @end

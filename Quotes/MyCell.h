@@ -9,12 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MyCell : UITableViewCell
-{
-//    IBOutlet UILabel *title;
-}
+
 
 @property(nonatomic,retain) UILabel* title;
 
-//-(void)setTitle:(NSString *) text;
 
 @end

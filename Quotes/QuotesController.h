@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MyCell.h"
+#import "QuotesDetailsController.h"
 
 @interface QuotesController : UITableViewController
 
+{
+    UIView *myNavBar;
+}
 
 @end

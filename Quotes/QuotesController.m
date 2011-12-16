@@ -13,17 +13,26 @@
 - (void)loadView
 {
     [super loadView];
-    [self.tableView setG];
+    self.view.backgroundColor = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+    self.navigationController.navigationBarHidden = YES;
+    
+    CGRect frame = CGRectMake(0, 10, 320, 50);
+    myNavBar = [[UIView alloc]initWithFrame:frame];
+    self.tableView.tableHeaderView = myNavBar;
+    [self.view addSubview:self.tableView.tableHeaderView];
+    
+        
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 15;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 20;
+    return 30;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -39,16 +48,7 @@
     
     if (cell == nil)
     {
-        NSArray *topLevelObjects = [[NSBundle mainBundle]loadNibNamed:@"MyCell" owner:nil options:nil];
-        
-        for (id curObject in topLevelObjects)
-        {
-            if ([curObject isKindOfClass:[UITableViewCell class]])
-            {
-                cell = (MyCell*)curObject;
-                break;
-            }
-        }
+        cell = [[MyCell alloc] init];
     }
 
     cell.title.text = cellId;
@@ -57,8 +57,18 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    QuotesDetailsController *details = [[QuotesDetailsController alloc]init];
+    [self.navigationController pushViewController:details animated:YES];
+    [details release];
+}
 
-
-
+- (void)dealloc 
+{
+    [myNavBar release];
+    [super dealloc];
+}
 
 @end

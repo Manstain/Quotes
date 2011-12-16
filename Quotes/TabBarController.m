@@ -21,8 +21,8 @@
     
     self.view.frame = frame;
     
-    QuotesController *quotes = [[QuotesController alloc]init];
-    FavoritesController *favorites = [[FavoritesController alloc]init];
+    QuotesController *quotes = [[QuotesController alloc]initWithStyle:UITableViewStyleGrouped];
+    FavoritesController *favorites = [[FavoritesController alloc]initWithStyle:UITableViewStyleGrouped];
     
     UINavigationController *favoritesNavCtrl = [[UINavigationController alloc]initWithRootViewController:quotes];
     quotes.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];

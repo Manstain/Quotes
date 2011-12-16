@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "QuotesController.h"
+#import "FavorDetailsController.h"
 
 @interface FavoritesController : QuotesController
 

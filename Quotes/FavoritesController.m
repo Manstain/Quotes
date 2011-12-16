@@ -10,5 +10,12 @@
 
 @implementation FavoritesController
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    FavorDetailsController *details = [[FavorDetailsController alloc]init];
+    [self.navigationController pushViewController:details animated:YES];
+    [details release];
+}
 
 @end
