@@ -10,6 +10,22 @@
 
 @implementation FavoritesController
 
+- (id)init 
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.tabBarItem =  [[UITabBarItem alloc] initWithTitle:@"Quotes" image:[UIImage imageNamed:@"quotes.png"] tag:1]; 
+    }
+    return self;
+}
+
+- (void)loadView
+{
+    [super loadView];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

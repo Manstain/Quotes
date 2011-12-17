@@ -10,19 +10,35 @@
 
 @implementation QuotesController
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self) 
+    {
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
+    }
+    return self;
+}
+
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     self.navigationController.navigationBarHidden = YES;
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background1.jpeg"]];
     
-    CGRect frame = CGRectMake(0, 10, 320, 50);
-    myNavBar = [[UIView alloc]initWithFrame:frame];
-    self.tableView.tableHeaderView = myNavBar;
-    [self.view addSubview:self.tableView.tableHeaderView];
+    CGRect frame = CGRectMake(0, 0 , 0, 0);
+    myTableView = [[UITableView alloc]initWithFrame:frame style:UITableViewStyleGrouped];
+    myTableView.backgroundColor = [UIColor clearColor];
+
+    myTableView.delegate = self;
+    myTableView.dataSource = self;
     
-        
+    finder = [[UIView alloc]init];
+    finder.backgroundColor = [UIColor clearColor];
     
+    [self.view addSubview:myTableView];
+    [self.view addSubview:finder];    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -57,6 +73,17 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    CGRect frame = CGRectMake(self.view.frame.origin.x, finderHeight, self.view.frame.size.width, self.view.frame.size.height - finderHeight);
+    myTableView.frame = frame;
+    
+    frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, finderHeight);
+    finder.frame = frame;
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -67,7 +94,8 @@
 
 - (void)dealloc 
 {
-    [myNavBar release];
+    [myTableView release];
+    [finder release];
     [super dealloc];
 }
 

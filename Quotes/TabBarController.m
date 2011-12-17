@@ -21,15 +21,12 @@
     
     self.view.frame = frame;
     
-    QuotesController *quotes = [[QuotesController alloc]initWithStyle:UITableViewStyleGrouped];
-    FavoritesController *favorites = [[FavoritesController alloc]initWithStyle:UITableViewStyleGrouped];
+    QuotesController *quotes = [[QuotesController alloc]init];
+    FavoritesController *favorites = [[FavoritesController alloc]init];
     
     UINavigationController *favoritesNavCtrl = [[UINavigationController alloc]initWithRootViewController:quotes];
-    quotes.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
-    
-    
     UINavigationController *quotesNavCtrl = [[UINavigationController alloc]initWithRootViewController:favorites];
-    favorites.tabBarItem =  [[UITabBarItem alloc] initWithTitle:@"Quotes" image:[UIImage imageNamed:@"quotes.jpeg"] tag:1]; 
+    
     [self setViewControllers:[NSArray arrayWithObjects:favoritesNavCtrl, quotesNavCtrl, nil] animated:YES];
     
     [quotes release];
@@ -38,9 +35,5 @@
     [quotesNavCtrl release];
 }
 
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
-{
-    
-}
 
 @end

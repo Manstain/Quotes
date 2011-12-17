@@ -7,6 +7,7 @@
 //
 
 #import "MyCell.h"
+#import "QuartzCore/QuartzCore.h"
 
 @implementation MyCell
 
@@ -17,11 +18,17 @@
     self = [super init];
     if (self) 
     {
-        CGRect frame = CGRectMake(20, 5, 280, 15);
-        title = [[UILabel alloc]initWithFrame:frame];
+        self.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"cellBackGround.jpeg"]];
+        self.backgroundView.frame = self.bounds;
+        self.backgroundView.layer.cornerRadius = 10;
+        self.backgroundView.clipsToBounds = YES;
+
+        //CGRect frame = self.frame;
+        title = [[UILabel alloc]initWithFrame:self.backgroundView.frame];
         title.textAlignment = UITextAlignmentCenter;
+        
+        title.backgroundColor = [UIColor clearColor];
         [self addSubview:title];
-        //self.backgroundColor = [UIColor blackColor];
     }
     return self;
 }

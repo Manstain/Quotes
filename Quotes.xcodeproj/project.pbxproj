@@ -12,7 +12,11 @@
 		E96AFCE91499042D00AC06D3 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96AFCE81499042D00AC06D3 /* MyCell.m */; };
 		E99E9C0E149BA26400CE4180 /* QuotesDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E9C0D149BA26400CE4180 /* QuotesDetailsController.m */; };
 		E99E9C12149BABEB00CE4180 /* FavorDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E9C11149BABEB00CE4180 /* FavorDetailsController.m */; };
-		E99E9C14149BB0E200CE4180 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E99E9C13149BB0E200CE4180 /* background.jpg */; };
+		E9BF5121149C95DB000222A2 /* quotes.png in Resources */ = {isa = PBXBuildFile; fileRef = E9BF5120149C95DB000222A2 /* quotes.png */; };
+		E9BF5127149CA6D2000222A2 /* myNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BF5126149CA6D2000222A2 /* myNavBar.m */; };
+		E9BF5131149CCBB7000222A2 /* bacground1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9BF5130149CCBB7000222A2 /* bacground1.jpg */; };
+		E9BF5133149CCDB6000222A2 /* cellBackGround.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E9BF5132149CCDB6000222A2 /* cellBackGround.jpeg */; };
+		E9BF5135149CCF80000222A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF5134149CCF80000222A2 /* QuartzCore.framework */; };
 		E9D685EE1496593B0016A4B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D685ED1496593B0016A4B7 /* UIKit.framework */; };
 		E9D685F01496593B0016A4B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D685EF1496593B0016A4B7 /* Foundation.framework */; };
 		E9D685F21496593B0016A4B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D685F11496593B0016A4B7 /* CoreGraphics.framework */; };
@@ -23,7 +27,6 @@
 		E9D686031496593B0016A4B7 /* Quotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9D686011496593B0016A4B7 /* Quotes.xcdatamodeld */; };
 		E9D6860C14965C070016A4B7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D6860B14965C070016A4B7 /* RootViewController.m */; };
 		E9D6860F14965E360016A4B7 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D6860E14965E360016A4B7 /* TabBarController.m */; };
-		E9D6861114966F800016A4B7 /* quotes.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E9D6861014966F800016A4B7 /* quotes.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +40,12 @@
 		E99E9C0D149BA26400CE4180 /* QuotesDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuotesDetailsController.m; sourceTree = "<group>"; };
 		E99E9C10149BABEB00CE4180 /* FavorDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavorDetailsController.h; sourceTree = "<group>"; };
 		E99E9C11149BABEB00CE4180 /* FavorDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorDetailsController.m; sourceTree = "<group>"; };
-		E99E9C13149BB0E200CE4180 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		E9BF5120149C95DB000222A2 /* quotes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = quotes.png; path = Quotes/quotes.png; sourceTree = "<group>"; };
+		E9BF5125149CA6D2000222A2 /* myNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myNavBar.h; sourceTree = "<group>"; };
+		E9BF5126149CA6D2000222A2 /* myNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myNavBar.m; sourceTree = "<group>"; };
+		E9BF5130149CCBB7000222A2 /* bacground1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bacground1.jpg; path = Quotes/bacground1.jpg; sourceTree = "<group>"; };
+		E9BF5132149CCDB6000222A2 /* cellBackGround.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cellBackGround.jpeg; sourceTree = "<group>"; };
+		E9BF5134149CCF80000222A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E9D685E91496593B0016A4B7 /* Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D685ED1496593B0016A4B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E9D685EF1496593B0016A4B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,7 +62,6 @@
 		E9D6860B14965C070016A4B7 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		E9D6860D14965E360016A4B7 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		E9D6860E14965E360016A4B7 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		E9D6861014966F800016A4B7 /* quotes.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = quotes.jpeg; path = Quotes/quotes.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9BF5135149CCF80000222A2 /* QuartzCore.framework in Frameworks */,
 				E9D685EE1496593B0016A4B7 /* UIKit.framework in Frameworks */,
 				E9D685F01496593B0016A4B7 /* Foundation.framework in Frameworks */,
 				E9D685F21496593B0016A4B7 /* CoreGraphics.framework in Frameworks */,
@@ -78,8 +86,9 @@
 				E9D685F51496593B0016A4B7 /* Quotes */,
 				E9D685EC1496593B0016A4B7 /* Frameworks */,
 				E9D685EA1496593B0016A4B7 /* Products */,
-				E9D6861014966F800016A4B7 /* quotes.jpeg */,
-				E99E9C13149BB0E200CE4180 /* background.jpg */,
+				E9BF5130149CCBB7000222A2 /* bacground1.jpg */,
+				E9BF5132149CCDB6000222A2 /* cellBackGround.jpeg */,
+				E9BF5120149C95DB000222A2 /* quotes.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +103,7 @@
 		E9D685EC1496593B0016A4B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9BF5134149CCF80000222A2 /* QuartzCore.framework */,
 				E9D685ED1496593B0016A4B7 /* UIKit.framework */,
 				E9D685EF1496593B0016A4B7 /* Foundation.framework */,
 				E9D685F11496593B0016A4B7 /* CoreGraphics.framework */,
@@ -142,6 +152,8 @@
 				E99E9C0D149BA26400CE4180 /* QuotesDetailsController.m */,
 				E99E9C10149BABEB00CE4180 /* FavorDetailsController.h */,
 				E99E9C11149BABEB00CE4180 /* FavorDetailsController.m */,
+				E9BF5125149CA6D2000222A2 /* myNavBar.h */,
+				E9BF5126149CA6D2000222A2 /* myNavBar.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -197,8 +209,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D685FA1496593B0016A4B7 /* InfoPlist.strings in Resources */,
-				E9D6861114966F800016A4B7 /* quotes.jpeg in Resources */,
-				E99E9C14149BB0E200CE4180 /* background.jpg in Resources */,
+				E9BF5121149C95DB000222A2 /* quotes.png in Resources */,
+				E9BF5131149CCBB7000222A2 /* bacground1.jpg in Resources */,
+				E9BF5133149CCDB6000222A2 /* cellBackGround.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +232,7 @@
 				E96AFCE91499042D00AC06D3 /* MyCell.m in Sources */,
 				E99E9C0E149BA26400CE4180 /* QuotesDetailsController.m in Sources */,
 				E99E9C12149BABEB00CE4180 /* FavorDetailsController.m in Sources */,
+				E9BF5127149CA6D2000222A2 /* myNavBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

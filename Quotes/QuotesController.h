@@ -10,10 +10,12 @@
 #import "MyCell.h"
 #import "QuotesDetailsController.h"
 
-@interface QuotesController : UITableViewController
+#define finderHeight 70
 
+@interface QuotesController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 {
-    UIView *myNavBar;
+    UIView *finder;
+    UITableView *myTableView;
 }
 
 @end
