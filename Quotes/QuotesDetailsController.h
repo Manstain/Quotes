@@ -6,15 +6,19 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "myNavBar.h"
+#import "DetailCell.h"
 
 #define NAVBARHEIGHT 70
 
 @interface QuotesDetailsController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 {
-    MyNavBar *myNavbar;
+    UIButton *leftButton;
+    UIView *grayView;
+    UILabel *titleLabal;
     UITableView *contentView;
     NSString *content;
 }
+
+-(IBAction)leftButtonPushed:(id)sender;
 
 @end

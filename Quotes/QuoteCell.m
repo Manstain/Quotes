@@ -6,10 +6,9 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "MyCell.h"
-#import "QuartzCore/QuartzCore.h"
+#import "QuoteCell.h"
 
-@implementation MyCell
+@implementation QuoteCell
 
 @synthesize title;
 
@@ -23,7 +22,6 @@
         self.backgroundView.layer.cornerRadius = 10;
         self.backgroundView.clipsToBounds = YES;
 
-        //CGRect frame = self.frame;
         title = [[UILabel alloc]initWithFrame:self.backgroundView.frame];
         title.textAlignment = UITextAlignmentCenter;
         

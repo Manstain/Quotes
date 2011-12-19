@@ -16,7 +16,7 @@
     
     if (self) 
     {
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
+        self.tabBarItem =  [[UITabBarItem alloc] initWithTitle:@"Quotes" image:[UIImage imageNamed:@"Quotes.png"] tag:1]; 
     }
     return self;
 }
@@ -25,19 +25,20 @@
 {
     [super loadView];
     self.navigationController.navigationBarHidden = YES;
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background1.jpeg"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.jpeg"]];
     
     CGRect frame = CGRectMake(0, 0 , 0, 0);
-    myTableView = [[UITableView alloc]initWithFrame:frame style:UITableViewStyleGrouped];
-    myTableView.backgroundColor = [UIColor clearColor];
+    quotesTableView = [[UITableView alloc]initWithFrame:frame style:UITableViewStyleGrouped];
+    quotesTableView.backgroundColor = [UIColor clearColor];
+    quotesTableView.bounces = NO;
 
-    myTableView.delegate = self;
-    myTableView.dataSource = self;
+    quotesTableView.delegate = self;
+    quotesTableView.dataSource = self;
     
     finder = [[UIView alloc]init];
     finder.backgroundColor = [UIColor clearColor];
     
-    [self.view addSubview:myTableView];
+    [self.view addSubview:quotesTableView];
     [self.view addSubview:finder];    
 }
 
@@ -46,10 +47,6 @@
     return 15;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 30;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -60,14 +57,18 @@
 {
     static NSString *cellId = @"QuoteCell";
     
-    MyCell *cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
+    QuoteCell *cell = (QuoteCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
     
     if (cell == nil)
     {
-        cell = [[MyCell alloc] init];
+        cell = [[QuoteCell alloc] init];
     }
 
     cell.title.text = cellId;
+    cell.selectedBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"selectedCellBackground.jpg"]];
+    cell.selectedBackgroundView.frame = cell.bounds;
+    cell.selectedBackgroundView.layer.cornerRadius = 10;
+    cell.selectedBackgroundView.clipsToBounds = YES;
     
     return cell;
     
@@ -78,7 +79,7 @@
     [super viewWillAppear:animated];
     
     CGRect frame = CGRectMake(self.view.frame.origin.x, finderHeight, self.view.frame.size.width, self.view.frame.size.height - finderHeight);
-    myTableView.frame = frame;
+    quotesTableView.frame = frame;
     
     frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, finderHeight);
     finder.frame = frame;
@@ -86,15 +87,17 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     QuotesDetailsController *details = [[QuotesDetailsController alloc]init];
     [self.navigationController pushViewController:details animated:YES];
     [details release];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+
 
 - (void)dealloc 
 {
-    [myTableView release];
+    [quotesTableView release];
     [finder release];
     [super dealloc];
 }

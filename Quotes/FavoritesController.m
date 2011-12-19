@@ -15,8 +15,8 @@
     self = [super init];
     
     if (self)
-    {
-        self.tabBarItem =  [[UITabBarItem alloc] initWithTitle:@"Quotes" image:[UIImage imageNamed:@"quotes.png"] tag:1]; 
+    {   
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
     }
     return self;
 }

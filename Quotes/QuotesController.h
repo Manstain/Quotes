@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyCell.h"
+#import "QuoteCell.h"
 #import "QuotesDetailsController.h"
 
 #define finderHeight 70
@@ -15,7 +15,7 @@
 @interface QuotesController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 {
     UIView *finder;
-    UITableView *myTableView;
+    UITableView *quotesTableView;
 }
 
 @end

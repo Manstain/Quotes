@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuartzCore/QuartzCore.h"
 
-@interface MyCell : UITableViewCell
+@interface QuoteCell : UITableViewCell
 
 
 @property(nonatomic,retain) UILabel* title;
