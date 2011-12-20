@@ -7,7 +7,6 @@
 //
 
 #import "TabBarController.h"
-#import "FavoritesController.h"
 
 @implementation TabBarController
 

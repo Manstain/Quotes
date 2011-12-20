@@ -2,20 +2,15 @@
 //  QuotesController.h
 //  Quotes
 //
-//  Created by Pavel on 12/13/11.
+//  Created by Pavel on 12/20/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "QuoteCell.h"
-#import "QuotesDetailsController.h"
+#import "TableController.h"
 
-#define finderHeight 70
-
-@interface QuotesController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+@interface QuotesController : TableController <UISearchBarDelegate>
 {
-    UIView *finder;
-    UITableView *quotesTableView;
+    UISearchBar *finder;
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FavoritesController.h"
 #import "QuotesController.h"
 
 @interface TabBarController : UITabBarController

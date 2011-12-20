@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QuotesController.h"
+#import "TableController.h"
 #import "FavorDetailsController.h"
 
-@interface FavoritesController : QuotesController
+@interface FavoritesController : TableController
 
 @end
