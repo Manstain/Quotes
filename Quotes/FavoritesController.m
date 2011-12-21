@@ -24,6 +24,16 @@
 - (void)loadView
 {
     [super loadView];
+    
+    editButton = [[UIButton alloc]init];
+    editButton.backgroundColor = [UIColor lightGrayColor];
+    [editButton setTitle:@"Edit" forState:UIControlStateNormal];
+    [editButton addTarget:self action:@selector(editButtonPushed) forControlEvents:UIControlStateNormal];
+    editButton.layer.cornerRadius = 10;
+    editButton.clipsToBounds = YES;
+
+    
+    [self.view addSubview:editButton];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -32,6 +42,18 @@
     FavorDetailsController *details = [[FavorDetailsController alloc]init];
     [self.navigationController pushViewController:details animated:YES];
     [details release];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    editButton.frame = CGRectMake(25, 10, 80, 30);
+}
+
+- (void)dealloc {
+    [editButton release];
+    [super dealloc];
 }
 
 @end

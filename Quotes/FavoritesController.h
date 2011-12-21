@@ -11,5 +11,8 @@
 #import "FavorDetailsController.h"
 
 @interface FavoritesController : TableController
+{
+    UIButton *editButton;
+}
 
 @end
