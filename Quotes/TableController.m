@@ -27,6 +27,8 @@
     self.navigationController.navigationBarHidden = YES;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.jpeg"]];
     
+    quotesData = [[NSMutableArray alloc]init];
+    
     CGRect frame = CGRectMake(0, 0 , 0, 0);
     
     quotesTableView = [[UITableView alloc]initWithFrame:frame style:UITableViewStyleGrouped];
@@ -44,7 +46,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 15;
+    return [quotesData count];
 }
 
 
@@ -64,7 +66,9 @@
         cell = [[QuoteCell alloc] init];
     }
 
-    cell.title.text = cellId;
+    Quote *quote = [quotesData objectAtIndex:indexPath.section];
+    
+    cell.title.text = quote.title;
     cell.selectedBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"selectedCellBackground.jpg"]];
     cell.selectedBackgroundView.frame = cell.bounds;
     cell.selectedBackgroundView.layer.cornerRadius = 10;
@@ -82,13 +86,7 @@
     grayView.frame = CGRectMake(self.view.frame.origin.x, 5, self.view.frame.size.width, 40);
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    QuotesDetailsController *details = [[QuotesDetailsController alloc]init];
-    [self.navigationController pushViewController:details animated:YES];
-    [details release];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
+
 
 - (void)grayViewCreateWithFrame:(CGRect)frame
 {
@@ -102,6 +100,7 @@
 {
     [grayView release];
     [quotesTableView release];
+    [quotesData release];
     [super dealloc];
 }
 

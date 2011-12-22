@@ -6,30 +6,19 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "DetailCell.h"
+#import "FavorDetailsController.h"
 
-#define NAVBARHEIGHT 70
-
-@interface QuotesDetailsController : UIViewController <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
+@interface QuotesDetailsController : FavorDetailsController
 {
-    UIButton *leftButton;
-    UIView *grayView;
-    UILabel *titleLabal;
-    UITableView *contentView;
-    NSString *content;
     UIView *favorView;
     UIImageView *favorImageView;
     UIImageView *activFavorImageView;
+
 }
 
--(IBAction)leftButtonPushed:(id)sender;
-- (void)leftButtonCreateWithFrame:(CGRect)frame;
-- (void)titleLabelCreateWithFrame:(CGRect)frame;
-- (void)contentViewCreate;
-- (void)favorViewCreateWithFrame:(CGRect)frame;
-- (void)grayViewCreateWithFrame:(CGRect)frame;
 - (void)favorImageViewCrete;
 - (void)activeImageViewCreate;
 - (void)favorTapped;
+- (void)favorViewCreateWithFrame:(CGRect)frame;
 
 @end

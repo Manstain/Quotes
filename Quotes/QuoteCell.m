@@ -22,7 +22,8 @@
         self.backgroundView.layer.cornerRadius = 10;
         self.backgroundView.clipsToBounds = YES;
 
-        title = [[UILabel alloc]initWithFrame:self.backgroundView.frame];
+        CGRect frame = CGRectMake(self.frame.origin.x+15,self.frame.origin.y , self.frame.size.width-30, self.frame.size.height);
+        title = [[UILabel alloc]initWithFrame:frame];
         title.textAlignment = UITextAlignmentCenter;
         
         title.backgroundColor = [UIColor clearColor];

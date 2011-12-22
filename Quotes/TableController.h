@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "QuoteCell.h"
 #import "QuotesDetailsController.h"
+#import "Quote.h"
 
 #define HEADERHEIGHT 90
 
@@ -16,9 +17,9 @@
 {
     UIView *grayView;
     UITableView *quotesTableView;
+    NSMutableArray *quotesData;
 }
 
 - (void)grayViewCreateWithFrame:(CGRect)frame;
-
 
 @end

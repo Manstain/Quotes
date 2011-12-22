@@ -6,8 +6,27 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "QuotesDetailsController.h"
+#import "Quote.h"
+#import "CoreDataManager.h"
+#import "QuoteCell.h"
 
-@interface FavorDetailsController : QuotesDetailsController
+#define NAVBARHEIGHT 70
+
+@interface FavorDetailsController:UIViewController <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
+{
+    UIButton *leftButton;
+    UIView *grayView;
+    UILabel *titleLabal;
+    UITableView *contentView;
+    NSString *content;
+}
+
+@property(nonatomic,retain)Quote *quoteModel;
+
+- (IBAction)leftButtonPushed:(id)sender;
+- (void)leftButtonCreateWithFrame:(CGRect)frame;
+- (void)titleLabelCreateWithFrame:(CGRect)frame;
+- (void)contentViewCreate;
+- (void)grayViewCreateWithFrame:(CGRect)frame;
 
 @end

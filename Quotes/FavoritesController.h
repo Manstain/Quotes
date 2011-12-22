@@ -15,4 +15,6 @@
     UIButton *editButton;
 }
 
+- (void) editButtonPushed;
+
 @end
