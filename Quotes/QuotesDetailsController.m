@@ -17,7 +17,7 @@
     self.view.backgroundColor = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"Background.jpeg"]];
     
     [self favorViewCreateWithFrame:CGRectMake(-5, 300, 45, 45)];
-    [self favorImageViewCrete];
+    [self favorImageViewCreate];
     [self activeImageViewCreate];
     
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favorTapped)];
@@ -33,12 +33,12 @@
 }
 
 
-- (void)favorTapped
+- (IBAction)favorTapped:(id)sender
 {
     [activFavorImageView setHidden:NO];
 }
 
-- (void)favorImageViewCrete
+- (void)favorImageViewCreate
 {
     favorImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"favor.png"]];
     favorImageView.frame = favorView.frame;
@@ -47,7 +47,12 @@
 {
     activFavorImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"activfavor.png"]];
     activFavorImageView.frame = favorView.frame;
-    [activFavorImageView setHidden:YES];
+    
+    if (!self.quoteModel.favor)
+    {
+            [activFavorImageView setHidden:YES];
+    }
+
 }
 
 - (void)favorViewCreateWithFrame:(CGRect)frame

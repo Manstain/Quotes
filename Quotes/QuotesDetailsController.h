@@ -16,9 +16,9 @@
 
 }
 
-- (void)favorImageViewCrete;
+- (void)favorImageViewCreate;
 - (void)activeImageViewCreate;
-- (void)favorTapped;
+- (IBAction)favorTapped:(id)sender;
 - (void)favorViewCreateWithFrame:(CGRect)frame;
 
 @end

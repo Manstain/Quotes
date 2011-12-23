@@ -13,6 +13,6 @@
     UISearchBar *finder;
 }
 
-- (void)loadQuotes;
+
 
 @end

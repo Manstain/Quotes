@@ -38,7 +38,6 @@
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [[CoreDataManager sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:&error];
     quotesData = [[NSMutableArray arrayWithArray:fetchedObjects]retain];
-    NSLog(@"%@    %@",((Quote *)[quotesData objectAtIndex:0]).title,((Quote*)[quotesData objectAtIndex:1]).title);
     [fetchRequest release];
 }
 

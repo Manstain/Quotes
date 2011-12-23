@@ -21,5 +21,6 @@
 }
 
 - (void)grayViewCreateWithFrame:(CGRect)frame;
+- (void)loadQuotes;
 
 @end

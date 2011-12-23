@@ -86,6 +86,16 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    QuoteCell *cell = [[QuoteCell alloc]init];
+    
+    CGSize constrainedSize;
+    constrainedSize.width = 320;
+    constrainedSize.height = MAXFLOAT;
+    
+    return [content sizeWithFont:cell.title.font constrainedToSize:constrainedSize].height+20;
+}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,9 +109,17 @@
         cell = [[QuoteCell alloc] init];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
+
     cell.title.numberOfLines = 0;
     cell.title.text = content;
+    
+    CGSize constrainedSize;
+    constrainedSize.width = 320;
+    constrainedSize.height = MAXFLOAT;
+    
+    CGFloat height = [content sizeWithFont:cell.title.font constrainedToSize:constrainedSize].height;
+    CGRect frame = CGRectMake(0, 0, constrainedSize.width, height+20);
+    [cell setCellFrame:frame];
     
     return cell;
     
@@ -112,10 +130,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)setQuote:(Quote *)quote
-{
-    quoteModel = [quote retain];
-}
 
 - (void)dealloc 
 {

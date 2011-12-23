@@ -41,6 +41,16 @@
     
 }
 
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle 
+//forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        //[self.dataArray removeObjectAtIndex:[indexPath row] - 1];
+//        
+//        // delete the row from the data source
+//        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+//    }   
+//}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -54,6 +64,14 @@
     [super viewWillAppear:animated];
     
     editButton.frame = CGRectMake(25, 10, 80, 30);
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath row] == 0) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (void)dealloc {

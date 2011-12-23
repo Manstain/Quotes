@@ -10,6 +10,9 @@
 
 @implementation TableController
 
+- (void)loadQuotes
+{return;}
+
 - (id)init
 {
     self = [super init];

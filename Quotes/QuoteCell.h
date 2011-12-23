@@ -14,5 +14,6 @@
 
 @property(nonatomic,retain) UILabel* title;
 
+- (void) setCellFrame:(CGRect)frame;
 
 @end
