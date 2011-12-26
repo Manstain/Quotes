@@ -14,13 +14,15 @@
 {
     [super loadView];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(hideActiveImageView) name:@"QuoteRemovedFromFavorities" object:nil];
+    
     self.view.backgroundColor = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"Background.jpeg"]];
     
     [self favorViewCreateWithFrame:CGRectMake(-5, 300, 45, 45)];
     [self favorImageViewCreate];
     [self activeImageViewCreate];
     
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favorTapped)];
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favorTapped:)];
 	[tapRecognizer setNumberOfTapsRequired:1];
 	[tapRecognizer setDelegate:self];
 	[favorView addGestureRecognizer:tapRecognizer];
@@ -32,10 +34,38 @@
     
 }
 
+- (void)hideActiveImageView
+{
+    [activFavorImageView setHidden:YES];
+}
 
 - (IBAction)favorTapped:(id)sender
 {
     [activFavorImageView setHidden:NO];
+    self.quoteModel.favor = [NSNumber numberWithBool:YES];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Quote" inManagedObjectContext:[CoreDataManager sharedInstance].managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"quoteID = %@", self.quoteModel.quoteID];
+    [request setPredicate:predicate];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"quoteID" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    [sortDescriptors release]; sortDescriptors = nil;
+    [sortDescriptor release]; sortDescriptor = nil;
+    
+    NSError *error;
+    Quote *quote = [[[CoreDataManager sharedInstance].managedObjectContext executeFetchRequest:request error:&error] objectAtIndex:0];
+    [request release]; request = nil;
+    
+    quote.favor = [NSNumber numberWithBool:YES];
+    [[CoreDataManager sharedInstance].managedObjectContext save:&error];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"QuoteAddaedToFavorites" object:nil];
+
 }
 
 - (void)favorImageViewCreate
@@ -48,7 +78,8 @@
     activFavorImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"activfavor.png"]];
     activFavorImageView.frame = favorView.frame;
     
-    if (!self.quoteModel.favor)
+
+    if (![self.quoteModel.favor boolValue])
     {
             [activFavorImageView setHidden:YES];
     }

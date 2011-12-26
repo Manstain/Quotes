@@ -20,5 +20,6 @@
 - (void)activeImageViewCreate;
 - (IBAction)favorTapped:(id)sender;
 - (void)favorViewCreateWithFrame:(CGRect)frame;
+- (void)hideActiveImageView;
 
 @end

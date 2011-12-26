@@ -12,6 +12,7 @@
 		E907C46914A0DDE0002659B8 /* QuotesController.m in Sources */ = {isa = PBXBuildFile; fileRef = E907C46814A0DDE0002659B8 /* QuotesController.m */; };
 		E93549291497B7EC002465FC /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93549281497B7EC002465FC /* TableController.m */; };
 		E935492D1497B8E8002465FC /* FavoritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935492C1497B8E8002465FC /* FavoritesController.m */; };
+		E95CAF4A14A86BBA00B39AD0 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = E95CAF4914A86BBA00B39AD0 /* Quote.m */; };
 		E96AFCE91499042D00AC06D3 /* QuoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96AFCE81499042D00AC06D3 /* QuoteCell.m */; };
 		E98A92DD149F743D00EA2084 /* Background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E98A92DC149F743D00EA2084 /* Background.jpeg */; };
 		E98A92DF149F7C2100EA2084 /* Quotes.png in Resources */ = {isa = PBXBuildFile; fileRef = E98A92DE149F7C2100EA2084 /* Quotes.png */; };
@@ -19,7 +20,6 @@
 		E99E9C0E149BA26400CE4180 /* QuotesDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E9C0D149BA26400CE4180 /* QuotesDetailsController.m */; };
 		E99E9C12149BABEB00CE4180 /* FavorDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E9C11149BABEB00CE4180 /* FavorDetailsController.m */; };
 		E9AB863A14A33A5F00C2031F /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AB863914A33A5E00C2031F /* CoreDataManager.m */; };
-		E9AB864414A3472600C2031F /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AB864314A3472600C2031F /* Quote.m */; };
 		E9BF5133149CCDB6000222A2 /* cellBackGround.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E9BF5132149CCDB6000222A2 /* cellBackGround.jpeg */; };
 		E9BF5135149CCF80000222A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF5134149CCF80000222A2 /* QuartzCore.framework */; };
 		E9D685EE1496593B0016A4B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D685ED1496593B0016A4B7 /* UIKit.framework */; };
@@ -43,6 +43,8 @@
 		E93549281497B7EC002465FC /* TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableController.m; sourceTree = "<group>"; };
 		E935492B1497B8E8002465FC /* FavoritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesController.h; sourceTree = "<group>"; };
 		E935492C1497B8E8002465FC /* FavoritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesController.m; sourceTree = "<group>"; };
+		E95CAF4814A86BBA00B39AD0 /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
+		E95CAF4914A86BBA00B39AD0 /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
 		E96AFCE71499042D00AC06D3 /* QuoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteCell.h; sourceTree = "<group>"; };
 		E96AFCE81499042D00AC06D3 /* QuoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteCell.m; sourceTree = "<group>"; };
 		E98A92DC149F743D00EA2084 /* Background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpeg; sourceTree = "<group>"; };
@@ -54,8 +56,6 @@
 		E99E9C11149BABEB00CE4180 /* FavorDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorDetailsController.m; sourceTree = "<group>"; };
 		E9AB863814A33A5E00C2031F /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		E9AB863914A33A5E00C2031F /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
-		E9AB864214A3472600C2031F /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quote.h; path = ../Quote.h; sourceTree = "<group>"; };
-		E9AB864314A3472600C2031F /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quote.m; path = ../Quote.m; sourceTree = "<group>"; };
 		E9BF5132149CCDB6000222A2 /* cellBackGround.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cellBackGround.jpeg; sourceTree = "<group>"; };
 		E9BF5134149CCF80000222A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E9D685E91496593B0016A4B7 /* Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +95,8 @@
 		E9D685DE1496593B0016A4B7 = {
 			isa = PBXGroup;
 			children = (
+				E95CAF4814A86BBA00B39AD0 /* Quote.h */,
+				E95CAF4914A86BBA00B39AD0 /* Quote.m */,
 				E9D685F51496593B0016A4B7 /* Quotes */,
 				E9D685EC1496593B0016A4B7 /* Frameworks */,
 				E9D685EA1496593B0016A4B7 /* Products */,
@@ -134,8 +136,6 @@
 				E9D685FE1496593B0016A4B7 /* myAppDelegate.h */,
 				E9D685FF1496593B0016A4B7 /* myAppDelegate.m */,
 				E9D686011496593B0016A4B7 /* Quotes.xcdatamodeld */,
-				E9AB864214A3472600C2031F /* Quote.h */,
-				E9AB864314A3472600C2031F /* Quote.m */,
 				E9D685F61496593B0016A4B7 /* Supporting Files */,
 			);
 			path = Quotes;
@@ -256,7 +256,7 @@
 				E99E9C12149BABEB00CE4180 /* FavorDetailsController.m in Sources */,
 				E907C46914A0DDE0002659B8 /* QuotesController.m in Sources */,
 				E9AB863A14A33A5F00C2031F /* CoreDataManager.m in Sources */,
-				E9AB864414A3472600C2031F /* Quote.m in Sources */,
+				E95CAF4A14A86BBA00B39AD0 /* Quote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
