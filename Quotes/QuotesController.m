@@ -15,6 +15,7 @@
     [super loadView];
 
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loadQuotes) name:@"QuoteRemovedFromFavorities" object:nil];
+    filteredQuotesData = [[NSMutableArray alloc]init];
     
 //    Quote *quote = [NSEntityDescription insertNewObjectForEntityForName:@"Quote" inManagedObjectContext:[CoreDataManager sharedInstance].managedObjectContext ];
 //    [quote setValue:@"kavabanga" forKey:@"title"];
@@ -59,8 +60,6 @@
     quotesData = [[NSMutableArray arrayWithArray:fetchedObjects]retain];
     [fetchRequest release];
     
-    //[quotesTableView reloadData];
-    
     
 }
 
@@ -81,8 +80,66 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+{
+    [finder endEditing:YES];
+    finder.showsCancelButton = NO;
+    [darkView removeFromSuperview];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSMutableArray *tmpArray;
+    
+    for (Quote *curQuote in quotesData)
+    {
+        if (![finder.text compare:curQuote.title])
+        {
+            [filteredQuotesData addObject:curQuote]; 
+        }
+    }
+    
+    tmpArray = quotesData;
+    quotesData = filteredQuotesData;
+    filteredQuotesData = tmpArray;
+    
+    [quotesTableView reloadData];
+
+    [finder endEditing:YES];
+    finder.showsCancelButton = NO;
+    [darkView removeFromSuperview];
+}
+
+- (void) darkViewCreate
+{
+    darkView = [[UIView alloc]init];
+    darkView.frame = quotesTableView.frame;
+    darkView.backgroundColor = [UIColor darkGrayColor];
+    darkView.alpha = 0.7;
+}
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    
+    if (!darkView)
+    {
+        [self darkViewCreate];
+    }
+    
+    [self.view addSubview:darkView];
+
+    return finder.showsCancelButton = YES;
+    
+}
+
 - (void)dealloc
 {
+    if (darkView)
+    {
+        [darkView release];
+    }
+    
+    [filteredQuotesData release];
     [finder release];
     [super dealloc];
 }

@@ -138,10 +138,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     FavorDetailsController *details = [[FavorDetailsController alloc]init];
+    details.quoteModel = [quotesData objectAtIndex:indexPath.section];
     [self.navigationController pushViewController:details animated:YES];
     [details release];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated

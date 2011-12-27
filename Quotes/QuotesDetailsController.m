@@ -27,7 +27,6 @@
 	[tapRecognizer setDelegate:self];
 	[favorView addGestureRecognizer:tapRecognizer];
     
-  
     [self.view addSubview:favorView];
     [self.view addSubview:favorImageView];
     [self.view addSubview:activFavorImageView];
@@ -81,7 +80,7 @@
 
     if (![self.quoteModel.favor boolValue])
     {
-            [activFavorImageView setHidden:YES];
+        [activFavorImageView setHidden:YES];
     }
 
 }

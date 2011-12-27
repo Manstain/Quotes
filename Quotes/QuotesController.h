@@ -11,7 +11,10 @@
 @interface QuotesController : TableController <UISearchBarDelegate>
 {
     UISearchBar *finder;
+    UIView *darkView;
+    NSMutableArray *filteredQuotesData;
 }
 
+- (void) darkViewCreate;
 
 @end
