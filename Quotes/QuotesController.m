@@ -82,6 +82,15 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
 {
+    if (quotesData.count <= filteredQuotesData.count) 
+    {
+        NSMutableArray *tmpArray = quotesData;
+        quotesData = filteredQuotesData;
+        filteredQuotesData = tmpArray;
+        [quotesTableView reloadData];
+    }
+
+    
     [finder endEditing:YES];
     finder.showsCancelButton = NO;
     [darkView removeFromSuperview];
@@ -89,7 +98,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    NSMutableArray *tmpArray;
+    NSMutableArray *tmpArray = quotesData;
     
     for (Quote *curQuote in quotesData)
     {
@@ -99,7 +108,6 @@
         }
     }
     
-    tmpArray = quotesData;
     quotesData = filteredQuotesData;
     filteredQuotesData = tmpArray;
     
