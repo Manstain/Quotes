@@ -12,6 +12,7 @@
 		E907C46914A0DDE0002659B8 /* QuotesController.m in Sources */ = {isa = PBXBuildFile; fileRef = E907C46814A0DDE0002659B8 /* QuotesController.m */; };
 		E93549291497B7EC002465FC /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93549281497B7EC002465FC /* TableController.m */; };
 		E935492D1497B8E8002465FC /* FavoritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935492C1497B8E8002465FC /* FavoritesController.m */; };
+		E959BE9D14ACC1BA00C13480 /* FindNothingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E959BE9C14ACC1BA00C13480 /* FindNothingView.m */; };
 		E95CAF4A14A86BBA00B39AD0 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = E95CAF4914A86BBA00B39AD0 /* Quote.m */; };
 		E96AFCE91499042D00AC06D3 /* QuoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96AFCE81499042D00AC06D3 /* QuoteCell.m */; };
 		E98A92DD149F743D00EA2084 /* Background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E98A92DC149F743D00EA2084 /* Background.jpeg */; };
@@ -43,6 +44,8 @@
 		E93549281497B7EC002465FC /* TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableController.m; sourceTree = "<group>"; };
 		E935492B1497B8E8002465FC /* FavoritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesController.h; sourceTree = "<group>"; };
 		E935492C1497B8E8002465FC /* FavoritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesController.m; sourceTree = "<group>"; };
+		E959BE9B14ACC1BA00C13480 /* FindNothingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindNothingView.h; sourceTree = "<group>"; };
+		E959BE9C14ACC1BA00C13480 /* FindNothingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindNothingView.m; sourceTree = "<group>"; };
 		E95CAF4814A86BBA00B39AD0 /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
 		E95CAF4914A86BBA00B39AD0 /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
 		E96AFCE71499042D00AC06D3 /* QuoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteCell.h; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 				E907C46814A0DDE0002659B8 /* QuotesController.m */,
 				E9AB863814A33A5E00C2031F /* CoreDataManager.h */,
 				E9AB863914A33A5E00C2031F /* CoreDataManager.m */,
+				E959BE9B14ACC1BA00C13480 /* FindNothingView.h */,
+				E959BE9C14ACC1BA00C13480 /* FindNothingView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				E907C46914A0DDE0002659B8 /* QuotesController.m in Sources */,
 				E9AB863A14A33A5F00C2031F /* CoreDataManager.m in Sources */,
 				E95CAF4A14A86BBA00B39AD0 /* Quote.m in Sources */,
+				E959BE9D14ACC1BA00C13480 /* FindNothingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

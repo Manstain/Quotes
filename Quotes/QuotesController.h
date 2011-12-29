@@ -7,14 +7,19 @@
 //
 
 #import "TableController.h"
+#import "FindNothingView.h"
 
 @interface QuotesController : TableController <UISearchBarDelegate>
 {
     UISearchBar *finder;
     UIView *darkView;
+    FindNothingView *findNothingView;
     NSMutableArray *filteredQuotesData;
 }
 
+- (void) nothingHasBeenFinded;
 - (void) darkViewCreate;
+- (void) darkViewDelete;
+
 
 @end
