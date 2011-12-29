@@ -36,7 +36,7 @@
 - (void)findNothingTitleCreate
 {
         findNothingTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
-        findNothingTitle.center = CGPointMake(160,190);
+        findNothingTitle.center = CGPointMake(100,50);
         findNothingTitle.text = @"Nothing has been finded";
         findNothingTitle.backgroundColor = [UIColor clearColor];
         findNothingTitle.textColor = [UIColor orangeColor];
@@ -54,12 +54,12 @@
 {
         findNothingButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [findNothingButton setFrame:CGRectMake(0, 0, 100, 30)];
-        findNothingButton.center = CGPointMake(160, 240);
+        findNothingButton.center = CGPointMake(100, 100);
         findNothingButton.layer.cornerRadius = 10;
         findNothingButton.clipsToBounds = YES;
         [findNothingButton setTitle:@"Back" forState:UIControlStateNormal];
         [findNothingButton setBackgroundColor:[UIColor lightGrayColor]];
-        [findNothingButton addTarget:self action:@selector(backButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
+        [findNothingButton addTarget:self action:@selector(backButtonPushed) forControlEvents:UIControlEventTouchUpInside];
 
     [self addSubview:findNothingButton];
 }

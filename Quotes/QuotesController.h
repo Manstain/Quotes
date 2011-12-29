@@ -19,7 +19,6 @@
 
 - (void) nothingHasBeenFinded;
 - (void) darkViewCreate;
-- (void) darkViewDelete;
 
 
 @end

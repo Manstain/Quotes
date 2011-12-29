@@ -16,8 +16,9 @@
 
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loadQuotes) name:@"QuoteRemovedFromFavorities" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(nothingHasBeenFinded) name:@"NothinHasBeenFinded" object:nil];
-    filteredQuotesData = [[NSMutableArray alloc]init];
     findNothingView = [[FindNothingView alloc]init];
+    filteredQuotesData = [[NSMutableArray alloc]init];
+
     
 //    Quote *quote = [NSEntityDescription insertNewObjectForEntityForName:@"Quote" inManagedObjectContext:[CoreDataManager sharedInstance].managedObjectContext ];
 //    [quote setValue:@"kavabanga" forKey:@"title"];
@@ -70,6 +71,7 @@
     [super viewWillAppear:animated];
     
     finder.frame = CGRectMake(0, 45, 320, 45);
+    [self darkViewCreate];
 }
 
 
@@ -89,10 +91,11 @@
         NSMutableArray *tmpArray = quotesData;
         quotesData = filteredQuotesData;
         filteredQuotesData = tmpArray;
-        [quotesTableView reloadData];
+        [filteredQuotesData removeAllObjects];
     }
 
-    
+    [quotesTableView reloadData];
+    finder.text = nil;
     [finder endEditing:YES];
     finder.showsCancelButton = NO;
     [darkView removeFromSuperview];
@@ -118,7 +121,6 @@
     finder.showsCancelButton = NO;
     
     [darkView removeFromSuperview];
-    [self darkViewDelete];
     
     if (quotesData.count == 0)
     {
@@ -129,48 +131,43 @@
 
 - (void) darkViewCreate
 {
-    if (!darkView)
-    {
         darkView = [[UIView alloc]init];
         darkView.frame = quotesTableView.frame;
         darkView.backgroundColor = [UIColor darkGrayColor];
         darkView.alpha = 0.7;
-    }
-        [self.view addSubview:darkView];
 }
 
--(void)darkViewDelete
-{
-    if (darkView)
-    {
-        [darkView release];
-    }
-}
+
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
-    [self darkViewCreate];
-    
+    [findNothingView removeFromSuperview];
+    [self.view addSubview:darkView];
+  
     return finder.showsCancelButton = YES;
 }
 
 - (void) nothingHasBeenFinded
 {
     [findNothingView removeFromSuperview];
+    finder.text = nil;
+    [finder endEditing:YES];
     
     if (quotesData.count <= filteredQuotesData.count) 
     {
         NSMutableArray *tmpArray = quotesData;
         quotesData = filteredQuotesData;
         filteredQuotesData = tmpArray;
-        [quotesTableView reloadData];
+        [filteredQuotesData removeAllObjects];
     }
+    
+    [quotesTableView reloadData];
 }
 
 - (void)dealloc
 {   
     [findNothingView release];
-    [self darkViewDelete];
+    [darkView release];
     [filteredQuotesData release];
     [finder release];
     [super dealloc];
